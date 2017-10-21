@@ -25,7 +25,7 @@ where:
   *  `Update`,
   *  `Delete`,
  *  **$uriPath** is a valid Uri path which can contain parameters (see example),
- * **$fullnameControllerClass** self explanatory name :)
+ * **$fullnameControllerClass** self explanatory name :-)
 
 ### Example:
 ```php
@@ -35,7 +35,7 @@ new Route\Put('/user', User\SaveController::class);
 new Route\Delete('/user/delete/{id}', User\DeleteController::class);
 new Route\Delete('/user/delete/all', User\CleanUpController::class);
 ```
-Route `DELETE:/user/delete/{id}` has a parameter `id` and that means this route will match to this requests (all of them has DELETE method request):
+Route `DELETE:/user/delete/{id}` has a parameter `id` and that means this route will match to this requests (all of them has **DELETE** method request):
 ```bash
 example.com/user/delete/1
 example.com/user/delete/4
@@ -46,7 +46,7 @@ but request `example.com/user/delete/all` will be match to route `DELETE:/user/d
 
 If your controller class has any dependencies you can put them to array as third parameter:
 ```php
-$postRepository = new Repository\Post(...);
+$postRepository = new Repository\Post\Pdo(...);
 $mailer = new Mailer\Swift(...);
 
 new Route\Put(
@@ -69,7 +69,7 @@ $parameters = $route->extractParameters('/post/3/show');
 var_dump($parameters);
 
 // array(2) {
-//   'id' => string(1)
+//   'id' => string(1) "3"
 //   'action' => string(4) "show"
 // }
 ```

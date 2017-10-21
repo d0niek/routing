@@ -1,0 +1,4 @@
+suites:
+    edium_suite:
+        namespace: eXtalion\Component\Routing
+        psr4_prefix: eXtalion\Component\Routing

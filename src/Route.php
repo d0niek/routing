@@ -73,7 +73,7 @@ abstract class Route implements \IteratorAggregate
         array $controllerClassDependencies = [],
         array $routeParametersOptions = []
     ) {
-        $this->validRouet($route);
+        $this->validRoute($route);
         $this->validControllerClass($controllerClass);
 
         $this->route = explode('?', $route)[0];
@@ -89,7 +89,7 @@ abstract class Route implements \IteratorAggregate
         $this->method = strtolower(substr($class, strrpos($class, '\\') + 1));
     }
 
-    private function validRouet(string $route): void
+    private function validRoute(string $route): void
     {
         if ($route !== '' && $route[0] === '/') {
             $isRouteValid = filter_var(
